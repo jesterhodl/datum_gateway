@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 
 project(DATUM VERSION 0.3.1 LANGUAGES C)
 
+enable_testing()
+
 # Enable C23 if supported, else fall back to C11 for compatibility
 if(CMAKE_VERSION VERSION_LESS "3.21")
     # Older CMake: C23 not recognized; use C11
@@ -158,3 +160,6 @@ if(NOT CMAKE_CROSSCOMPILING)
 		VERBATIM
 	)
 endif()
+
+add_subdirectory(tests)
+
